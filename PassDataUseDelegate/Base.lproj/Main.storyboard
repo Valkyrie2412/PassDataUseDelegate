@@ -1,24 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--FirstVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FirstVC" customModule="PassDataUseDelegate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wZ5-d3-1vA">
+                                <rect key="frame" x="0.0" y="185" width="375" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaO-dg-aKg">
+                                <rect key="frame" x="67" y="249.5" width="241" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="SEND DATA TO SECONDVC ">
+                                    <color key="titleColor" red="1" green="0.99978677793212156" blue="0.064418578147939609" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="sZb-wG-uIX" kind="presentation" identifier="senDataSegue" id="mhQ-0j-QnH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.48418755467563057" green="0.51872018245249041" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="wZ5-d3-1vA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3QC-1K-lX3"/>
+                            <constraint firstItem="wZ5-d3-1vA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.6" id="67n-zw-C31"/>
+                            <constraint firstItem="IaO-dg-aKg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ndd-Nn-QZR"/>
+                            <constraint firstItem="IaO-dg-aKg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.8" id="eh7-BH-pW7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wZ5-d3-1vA" secondAttribute="trailing" id="jUv-ew-ZV9"/>
+                            <constraint firstItem="wZ5-d3-1vA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tXg-vl-Tiy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="textField1" destination="wZ5-d3-1vA" id="h0P-BU-U1r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-50" y="127"/>
+        </scene>
+        <!--SecondVC-->
+        <scene sceneID="ven-cn-Zg3">
+            <objects>
+                <viewController id="sZb-wG-uIX" customClass="SecondVC" customModule="PassDataUseDelegate" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6fI-kd-1ke">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DjD-0O-ytw">
+                                <rect key="frame" x="70.5" y="249.5" width="234" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="SEND DATA BACK FIRSTVC"/>
+                                <connections>
+                                    <action selector="sendingData:" destination="sZb-wG-uIX" eventType="touchUpInside" id="nbT-yr-Nw4"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p5y-gn-xKd">
+                                <rect key="frame" x="0.0" y="185" width="375" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.50202891151426621" green="1" blue="0.49388013391817775" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="6mc-H1-Vcj" firstAttribute="trailing" secondItem="p5y-gn-xKd" secondAttribute="trailing" id="HiM-zM-Gt5"/>
+                            <constraint firstItem="p5y-gn-xKd" firstAttribute="centerX" secondItem="6fI-kd-1ke" secondAttribute="centerX" id="RLl-H9-eyF"/>
+                            <constraint firstItem="DjD-0O-ytw" firstAttribute="centerY" secondItem="6fI-kd-1ke" secondAttribute="centerY" multiplier="0.8" id="Ssp-el-m8X"/>
+                            <constraint firstItem="p5y-gn-xKd" firstAttribute="centerY" secondItem="6fI-kd-1ke" secondAttribute="centerY" multiplier="0.6" id="ced-4h-gNU"/>
+                            <constraint firstItem="p5y-gn-xKd" firstAttribute="leading" secondItem="6mc-H1-Vcj" secondAttribute="leading" id="kdP-sT-Hna"/>
+                            <constraint firstItem="DjD-0O-ytw" firstAttribute="centerX" secondItem="6fI-kd-1ke" secondAttribute="centerX" id="yR4-GW-73p"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6mc-H1-Vcj"/>
+                    </view>
+                    <connections>
+                        <outlet property="textField2" destination="p5y-gn-xKd" id="dC3-XI-jcU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nCk-wx-jwd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="838" y="127"/>
         </scene>
     </scenes>
 </document>
